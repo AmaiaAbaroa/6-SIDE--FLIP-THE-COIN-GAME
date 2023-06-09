@@ -1,0 +1,199 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    height: 100%;
+    background-color: #f0a606;
+}
+
+h1{
+    font-size: 3em;
+    letter-spacing: 3px;
+    margin: 2%;
+}
+h3{
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    margin: 2%;
+}
+
+.container{
+    background-color: #fff;
+    max-width: 100%; 
+    width: 40%;
+    padding: 2%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.coin{
+    height: 40%;
+    width: 40%;
+    position: relative;
+    margin: 5% auto;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.coin img{
+    width: 120%;
+}
+.Aside, .Bside{
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.Bside, .Cside{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+            backface-visibility: hidden;
+    transform: rotateX(180deg);
+}
+
+/* Flip animation */
+
+@keyframes spin-Bside{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1980deg);
+    }
+}
+@keyframes spin-Aside{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
+}
+@keyframes spin-Cside {
+    0% {
+      transform: rotateX(0);
+    }
+    100% {
+      transform: rotateX(2340deg);
+    }
+  } 
+
+.counter{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2.5%;
+    margin: 6% auto 5%;
+    background-color: #f0a606;
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    font-weight: bolder;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    width: 30%;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#play-btn{
+    background-color: #fff;
+    color: #f0a606;
+    border-color: #f0a606;
+    box-shadow: 0 5px 15px #f0a606(0, 0, 0, 0.1), 0 6px 6px #f0a606(0, 0, 0, 0.1);
+}
+
+#play-btn:hover{
+    background-color: #f0a606;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 5px 15px #f0a606(0, 0, 0, 0.1), 0 6px 6px #f0a606(0, 0, 0, 0.1);
+}
+
+#play-btn:disabled{
+    border-color: #fff;
+    box-shadow: 0;
+}
+
+#reset-btn{
+    background-color: #fff;
+    color: #f0a606;
+    border-color: #f0a606;
+    box-shadow: 0 5px 15px #f0a606(0, 0, 0, 0.1), 0 6px 6px #f0a606(0, 0, 0, 0.1);
+}
+
+#reset-btn:hover{
+        background-color: #f0a606;
+        color: #fff;
+        border-color: #fff;
+        box-shadow: 0 5px 15px #f0a606(0, 0, 0, 0.1), 0 6px 6px #f0a606(0, 0, 0, 0.1);
+}
+
+/*RESPONSIVE*/
+@media(max-width:768px){
+    h1{
+        font-size: 1em;
+    }
+    h3{
+        font-size: 0.5rem;
+    }
+    .container{
+        max-width: 100%; 
+        width: 80%;
+        padding: 5%;
+    }
+    
+    .coin{
+        height: 60%;
+        width: 60%;
+    }
+    .coin img{
+        margin-left: -10%;
+    }
+    .counter{
+        padding: 3%;
+        margin: 6% auto 5%;
+        font-size: 0.8rem;
+    }
+    
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    button{
+        width: 50%;
+        padding: 5px 0;
+        margin: 2%;
+        font-size: 1rem;
+    }
+}
